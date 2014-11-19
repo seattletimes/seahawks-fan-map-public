@@ -1,0 +1,42 @@
+.location-input {
+  margin: 5px 0 15px 0;
+  white-space: nowrap;
+
+  [name=location] {
+    width: ~"calc(100% - 34px)";
+    display: inline-block;
+    margin: 0;
+  }
+
+  .geolocate {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 0;
+    vertical-align: top;
+
+  }
+
+  .location-preview {
+    width: 300px;
+    height: 0;
+    transition: height .2s ease-in-out;
+  }
+
+  &.searching {
+    .geolocate {
+      color: yellow;
+    }
+  }
+
+  &.located {
+
+    .geolocate {
+      color: @seaGreen;
+    }
+
+    .location-preview {
+      height: 300px;
+    }
+  }
+}

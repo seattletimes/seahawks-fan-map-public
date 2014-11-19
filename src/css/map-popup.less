@@ -1,0 +1,92 @@
+@import "util";
+
+.fan-popup {
+
+  .leaflet-popup-scrolled {
+    border: 0;
+  }
+
+  h1 {
+    font-size: 20px;
+    font-family: @sans-serif;
+    text-transform: capitalize;
+    margin: 2px 0 0 0;
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid #ddd;
+      list-style-type: none;
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+
+      .feature-label {
+        color: darken(@seaGreen, 5%);
+        font-weight: bold;
+        white-space: nowrap;
+        display: inline-block;
+      }
+
+      .season-ticket {
+        background-color: darken(@seaGray, 20%);
+        color: white;
+        font-weight: bold;
+        padding: 2px 4px;
+        border-radius: 4px;
+        white-space: nowrap;
+        display: inline-block;
+
+        i {
+          font-size: 1.2em;
+        }
+        
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      p {
+        margin: 2px 0;
+        line-height: 1.4em;
+        font-size: 1.2em;
+      }
+
+      .note {
+
+        position: relative;
+        display: block;
+        margin: 1em 0;
+        line-height: 1.5;
+
+        .fa-quote-left, .fa-quote-right {
+          font-size: 20px;
+          position: absolute;
+          color: fade(@seaGray, 50%);
+        }
+
+        .fa-quote-left {
+          //top: -16px;
+          left: -12px;
+        }
+
+        .fa-quote-right {
+          bottom: -10px;
+          right: 10px;
+        }
+
+        .content {
+          z-index: 2;
+        }
+
+      }
+    }
+  }
+}

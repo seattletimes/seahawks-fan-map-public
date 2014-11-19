@@ -1,0 +1,91 @@
+@import "util";
+
+.map-container {
+
+  .zoom-ui {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    width: 100%;
+
+    button {
+      white-space: nowrap;
+      margin-right: 4px;
+      font-size: 14px;
+
+      @media @mobile {
+        font-size: 12px;
+        width: 40%;
+
+        &.desktop {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.fan-map {
+  width: 100%;
+  height: 100%;
+}
+
+.fan-icon {
+  @size: 15px;
+
+  background-color: fade(@seaGreen, 80%);//transparent;
+  color: @seaBlue;
+  width: @size;
+  height: @size;
+  font-size: @size;
+  text-align: center;
+  line-height: @size;
+  border-radius: @size;
+  border-width: 4px;
+  border-style: solid;
+  border-color: @seaBlue;
+
+  @media @mobile {
+    @size: 30px;
+
+    font-size: 20px;
+    width: @size;
+    height: @size;
+    border-radius: @size;
+    line-height: @size;
+  }
+
+  .fa {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.marker-cluster {
+  text-align: center;
+  line-height: 40px;
+  background: fade(@seaBlue, 95%);
+  color: white;
+  border-radius: 100%;
+
+  &.medium {
+    background: fade(@seaBlue, 90%);
+    line-height: 50px;
+  }
+
+  &.large {
+    background: fade(@seaBlue, 85%);
+    line-height: 60px;
+  }
+}
+
+.featured {
+  color: fadeout(@seaGreen, 5%);
+  text-shadow: 0 0 3px @seaBlue;
+  font-size: 18px;
+
+  i.fa {
+    position: absolute;
+  }
+}

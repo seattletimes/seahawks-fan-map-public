@@ -1,0 +1,9 @@
+node_modules
+build
+temp
+auth.json
+# Don't include bower libraries by default
+src/js/lib/*/**
+# Don't include fan map data, since it's clogging the repo
+# Also because we don't want to publish exact locations for people
+json/FanMap*.json

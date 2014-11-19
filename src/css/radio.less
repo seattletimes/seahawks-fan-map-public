@@ -1,0 +1,43 @@
+@import "util";
+
+.radio-unit {
+  margin: 5px 0 15px 0;
+
+  input[type=radio], input[type=checkbox] {
+    display: none;
+    padding: 0;
+
+    & + label {
+      display: block;
+
+      &::before {
+        position: relative;
+        //obnoxious copy-paste to get Font-Awesome
+        //Entities aren't working reliably on mobile
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\f096";
+        font-size: 20px;
+        margin-right: 4px;
+      }
+    }
+
+    &:checked + label {
+      &::before {
+        content: "\f14a";
+        color: darken(@seaBlue, 8%);
+      }
+    }
+  }
+
+  input[type=radio] {
+    & + label {
+      width: 49%;
+      display: inline-block;
+    }
+  }
+}

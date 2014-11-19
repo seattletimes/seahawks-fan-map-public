@@ -1,0 +1,189 @@
+@import "util";
+
+.button() {
+  background: white;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-family: @sans-serif;
+  transition: background .2s linear;
+  transition: background .2s linear, box-shadow .1s ease-in-out, color 0.2s linear;
+  .transform(translateY(0));
+
+  &:hover {
+    background: #F4F4F4;
+  }
+
+  i.fa {
+    margin-right: 5px;
+  }
+}
+
+button, nav.switch-layer {
+  .button();
+}
+
+nav.switch-layer {
+  position: relative;
+
+  .key {
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    transition: max-height 1s ease-in-out;
+    font-size: 13px;
+
+    .key-box {
+      opacity: 1;
+    }
+
+    //see also playerPalette object in map-layer-stats.js
+    .wilson { color: rgb(11, 72, 107) }
+
+    .sherman { color: rgb(59, 134, 134) }
+
+    .lynch { color: rgb(121, 189, 154) }
+
+    .thomas { color: rgb(207, 240, 158) }
+
+    .other { color: rgb(221, 221, 200) }
+
+    //lifespan colors
+    // .year-color(@i) { color: hsl(270 - @i * 20, 40%, 70 - @i * 8%, 1) };
+    // .one { .year-color(0) }
+    // .two { .year-color(1) }
+    // .three { .year-color(2) }
+    // .five { .year-color(3) }
+    // .ten { .year-color(4) }
+    // .twenty { .year-color(5) }
+    // .thirty { .year-color(6) }
+
+    .thirty { color: rgb(0, 22, 63) }
+    .twenty { color: rgb(35, 57, 93); }
+    .ten { color: rgb(70, 92, 123); }
+    .five { color: rgb(105, 127, 153); }
+    .three { color: rgb(140, 162, 183); }
+    .two { color: rgb(175, 197, 213); }
+    .one { color: rgb(210, 232, 243); }
+
+    //fan stories
+    .green-featured { color: @seaGreen }
+    .blue-all { color: @seaBlue }
+
+  }
+
+  &.active {
+    border-top: 4px solid @seaBlue;
+
+    .key {
+      max-height: 300px;
+    }
+
+    .current {
+      display: none;
+    }
+  }
+
+  .wait {
+    opacity: 0;
+    transition: opacity .5s linear;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  &.loading {
+    .wait {
+      opacity: 1;
+    }
+
+    .current {
+      display: none;
+    }
+  }
+
+  .current {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  display: none;
+  transition: background .2s linear;
+  @media @mobile {
+    position: relative;
+  }
+
+  .modal {
+    position: relative;
+    display: block;
+    top: 100px;
+    margin: auto;
+    width: 768px;
+    max-width: 100%;
+    padding: 2em 3em 3em;
+    border-radius: 4px;
+    background: @seaBlue;
+    color: white;
+    color: rgba(255,255,255,0.8);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, .3);
+    .transform(translateY(-700px));
+    transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+
+    @media @mobile {
+      top: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 0px;
+      right: 4px;
+      cursor: pointer;
+      font-size: 24px;
+      color: @seaGray;
+
+      &:hover {
+        color: lighten(@seaGray, 10%);
+      }
+    }
+  }
+
+  &.visible {
+    background: rgba(0, 0, 0, .8);
+
+    .modal {
+      .transform(translateY(0));
+    }
+  }
+
+  &.show {
+    display: block;
+  }
+}
+
+.accent {
+  color: @seaGreen;
+}
+
+.gray-accent {
+  color: @seaGray;
+}
+
+.blue-accent {
+  color: @seaBlue;
+}

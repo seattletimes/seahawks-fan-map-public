@@ -1,0 +1,104 @@
+<!doctype html>
+<!--[if IE 9]><html lang="en-US" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html><!--<![endif]-->
+  <head>
+    <title>Hawks fan map: 2014-15 season | The Seattle Times</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <%= t.include("partials/_adHead.html") %>
+  </head>
+  <body>
+
+    <nav class="top">
+      <a href="http://seattletimes.com">
+        <img src="http://seattletimes.com/art/ui/seattletimeslogo_home.svg" class="logo">
+      </a>
+      <ul class="sponsor">
+        <!--<li><a href="https://www.countryfinancial.com/">Sponsored by: <span class="accent">Country Financial</span></a></li>-->
+      </ul>
+      <a class="share"></a>
+    </nav>
+
+    <%= t.include("_mapPanel.html") %>
+
+    <%= t.include("_form.html") %>
+
+    <div class="overlay">
+      <div class="modal">
+        <a class="close"><i class="fa fa-times"></i></a>
+        <h1>Where in the world are <span class="accent">Hawks fans?</span></h1>
+
+        <p>See the locations of Seahawks fans around the world. Click the <span class="accent add-yourself-tease"><i class="fa fa-thumb-tack"></i> Add yourself!</span> button to put your own marker on the map and share your fan story.
+
+        <p class="small-print"><strong>Small print:</strong> Your entry may be featured online and/or in print. Entries will be published daily, and entries that are determined to be fraudulent or inappropriate will be removed.
+
+        <ul class="credits">
+          <li><strong>Interactive:</strong> Thomas Wilburn, Katrina Barlow
+          <li><strong>Map tiles and data:</strong> <a href="http://stamen.com">Stamen Design</a>, <a href="http://openstreetmap.org">OpenStreetMap</a>
+        </ul>
+      </div>
+    </div>
+
+    <div class="controls">
+
+      <nav class="switch-layer" data-layer="stats" data-color="favorite">
+        <label>Favorite player</label> <i class="wait fa fa-clock-o"></i><i class="current fa fa-angle-down"></i>
+        <ul class="key">
+          <li> <i class="key-box fa fa-square wilson"></i> Russell Wilson
+          <li> <i class="key-box fa fa-square sherman"></i> Richard Sherman
+          <li> <i class="key-box fa fa-square lynch"></i> Marshawn Lynch
+          <li> <i class="key-box fa fa-square thomas"></i> Earl Thomas
+          <li> <i class="key-box fa fa-square other"></i> Others
+        </ul>
+      </nav>
+
+      <nav class="switch-layer" data-layer="stats" data-color="lifespan">
+        <label>Fan span (years)</label> <i class="wait fa fa-clock-o"></i><i class="current fa fa-angle-down"></i>
+        <ul class="key">
+          <li>Most people have been fans for:
+          <li> <i class="key-box fa fa-square one"></i> 1 year
+          <li> <i class="key-box fa fa-square two"></i> 2 years
+          <li> <i class="key-box fa fa-square three"></i> 3+ years
+          <li> <i class="key-box fa fa-square five"></i> 5+ years
+          <li> <i class="key-box fa fa-square ten"></i> 10+ years
+          <li> <i class="key-box fa fa-square twenty"></i> 20+ years
+          <li> <i class="key-box fa fa-square thirty"></i> 30+ years
+        </ul>
+      </nav>
+
+      <nav class="switch-layer" data-layer="cluster" data-color="stories">
+        <label>Fan stories</label> <i class="wait fa fa-clock-o"></i><i class="current fa fa-angle-down"></i>
+        <ul class="key">
+          <li> <i class="key-box fa fa-flag green-featured"></i> Featured stories
+          <li> <i class="key-box fa fa-circle blue-all"></i> All stories
+        </ul>
+      </nav>
+
+      <hr>
+
+      <button class="show-form">
+        <i class="fa fa-thumb-tack"></i>
+        Add yourself!
+      </button>
+      
+      <button class="show-dialog">
+        <i class="fa fa-question-circle"></i>
+        About this map
+      </button>
+    </div>
+
+    <script>
+var players = <%= JSON.stringify(json.SeahawksRoster2014_Active.map(function(player) {
+  return {
+    label: player.firstname + " " + player.lastname,
+    data: player.number
+  }
+})) %>
+    </script>
+    <script src="app.js"></script>
+    <%= t.include("partials/_adFoot.html") %>
+
+  </body>
+</html>

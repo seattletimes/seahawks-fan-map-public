@@ -1,0 +1,34 @@
+<ul class="list">
+{{#fans}}
+  <li class="fan">
+
+    {{#feature}}
+      <div class="feature-label">
+        <i class="fa fa-flag"></i>
+        Featured story
+      </div>
+    {{/feature}}
+
+    {{#season}}
+      <div class="season-ticket">
+        <i class="fa fa-ticket"></i>
+        Season ticket holder
+      </div>
+    {{/season}}
+    
+    <h1>{{name}}</h1>
+
+    {{#note}}
+    <div class="note">
+
+      <p class="content">&ldquo;{{note}}&rdquo;</p>
+
+    </div>
+    {{/note}}
+    
+    {{#lifespan}}<p> <label>Fan for:</label> {{lifespan}} {{/lifespan}}
+    {{#favorite}}<p> <label>Favorite player:</label> {{favorite}} {{/favorite}}
+    {{#zone}}<p> <label>Location:</label> {{#city}}{{city}}, {{/city}}{{zone}} {{/zone}}
+  </li>
+{{/fans}}
+</ul>

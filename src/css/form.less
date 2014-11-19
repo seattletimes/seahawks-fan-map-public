@@ -1,0 +1,177 @@
+@import "location-input";
+@import "autocomplete";
+@import "util";
+@import "radio";
+
+.form-panel {
+  padding: 10px 15px;
+  font-size: 14px;
+
+  //elements
+  .close-button {
+    position: absolute;
+    font-size: 20px;
+    z-index: 999;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+    color: @seaGray;
+  }
+
+  .close-button:hover {
+    color: lighten(@seaGray, 10%);
+  }
+
+  h2 {
+    font-family: @block;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+    font-size: 26px;
+  }
+
+  .chatter {
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: 100%;
+    margin: 0;
+    font-weight: normal;
+  }
+
+  input, select, textarea {
+    display: block;
+    margin: 5px 0 15px 0;
+    width: 100%;
+  }
+
+  input, textarea {
+    border: 1px solid #CCC;
+    font-size: 1em;
+    padding: 6px;
+  }
+
+  textarea {
+    min-height: 50px;
+  }
+
+  button {
+    border: none;
+    width: 100%;
+    background: @seaBlue;
+    color: white;
+    transition: box-shadow .2s ease-in-out, background .2s linear;
+    font-weight: bold;
+
+    .fa {
+      margin: 0;
+    }
+
+    &:hover {
+      background: darken(@seaGreen, 8%);
+    }
+
+    &[disabled] {
+      opacity: .4;
+      color: #888;
+    }
+  }
+
+  small {
+    display: inline-block;
+    color: #888;
+    font-size: 0.8em;
+  }
+
+  .radio-unit {
+    margin: 5px 0 15px 0;
+  }
+
+  .submit {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  //flow control
+
+  .submission {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100%;
+  }
+
+  .error {
+    border-radius: 4px;
+    background: #822;
+    color: white;
+    text-align: center;
+    margin: 8px 0;
+    padding: 8px;
+    display: none;
+  }
+
+  &.invalid {
+    .validation.error {
+      display: block;
+    }
+  }
+
+  .ui {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+    background: rgba(255, 255, 255, .9);
+
+    .when-sent {
+      display: none;
+      padding: 15px;
+
+
+      button {
+        margin-top: 1em;
+        font-size: 0.9em;
+        font-family: @block;
+        text-transform: uppercase;
+        font-weight: normal;
+        padding: 8px;
+      }
+    }
+
+    .message {
+      display: block;
+      padding: 14px;
+      text-align: center;
+      font-size: 14px;
+      font-family: @sans-serif;
+      color: white;
+      background: darken(@seaGray, 40%);
+      width: 100%;
+      margin-bottom: 10px;
+      transition: background .5s linear, color .5s linear;
+    }
+  }
+
+  &.sending, &.sent {
+    .ui {
+      display: block;
+    }
+  }
+
+  &.sent {
+    .ui {
+      background: white;
+    }
+
+    .when-sent {
+      display: block;
+    }
+
+    .message {
+      background: darken(@seaGray, 15%);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="stats-popup">
+  <h2>{{zone}}</h2>
+  <ul class="stats-list">
+    {{#stats.favorite}}
+      <li> <label>Favorite players:</label>
+        <ol class="player-list">
+          {{#stats.players}}<li>{{name}} ({{count}} votes){{/stats.players}}
+        </ol>
+    {{/stats.favorite}}
+
+    <!--<li> <label>Total votes:</label> {{stats.total}}-->
+
+    {{#stats.longest}}
+      <li> <label>Fans for:</label> {{stats.longest.lifespan}} years ({{stats.longest.count}} votes)
+    {{/stats.longest}}
+  </ul>
+</div>

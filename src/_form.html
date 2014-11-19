@@ -1,0 +1,72 @@
+<div class="form-panel">
+
+  <a class="show-form close-button"><i class="fa fa-times-circle"></i></a>
+
+  <div class="submission">
+
+    <h2><span class="gray-accent">Add your</span> <span class="blue-accent">fan story</a></h2>
+
+    <p class="chatter">Submit your story to our Seahawks fan map. Your entry may be featured in print.</p>
+
+    <div class="form">
+
+      <label for="name">Your name:</label>
+      <input name="name" placeholder="" required>
+
+      <label for="favorite">Your favorite player on the team now?</label>
+      <small>Begin typing to find player names on the active roster.</small>
+      <div class="autocomplete"></div>
+
+      <label for="location">Where are you from?</label>
+      <small>Find your location by clicking the arrow.</small>
+      <div class="location-input"></div>
+
+      <div class="radio-unit">
+
+        <h3>How long have you been a fan?</h3>
+
+        <input type="radio" value="1" name="lifespan" id="lifespan-1"><label for="lifespan-1">1 year or less</label>
+        <input type="radio" value="2" name="lifespan" id="lifespan-2"><label for="lifespan-2">2 years</label>
+        <input type="radio" value="3+" name="lifespan" id="lifespan-3"><label for="lifespan-3">3 - 5 years</label>
+        <input type="radio" value="5+" name="lifespan" id="lifespan-5"><label for="lifespan-5">5 - 10 years</label>
+        <input type="radio" value="10+" name="lifespan" id="lifespan-10"><label for="lifespan-10">10 - 20 years</label>
+        <input type="radio" value="20+" name="lifespan" id="lifespan-20"><label for="lifespan-20">20 - 30 years</label>
+        <input type="radio" value="30+" name="lifespan" id="lifespan-30"><label for="lifespan-30">30+ years</label>
+
+      </div>
+
+      <div class="radio-unit">
+      
+        <input type="checkbox" name="season" id="season" value="yes">
+        <label for="season">Are you a season ticket holder?</label>
+
+      </div>
+
+      <label for="note">Tell us your Seahawks story:</label>
+      <textarea name="note"></textarea>
+
+      <label for="contact">Contact info (email or phone number):</label>
+      <small>If you are selected as our "Fan of the Week," we will need to contact you. Contact information won't be published.</small>
+      <input name="contact">
+
+      <div class="validation error">
+        We need at least a name and location to put you on the map!
+      </div>
+
+      <button class="submit">SUBMIT!</button>
+
+    </div>
+
+  </div>
+
+  <div class="ui">
+    <div class="message">
+      Form submission sent
+    </div>
+
+    <p class="when-sent">
+      Thanks for submitting your story to The Seattle Times&rsquo; Hawks fan map. New fan data is added throughout the day. Your pin may not show up immediately.
+      <button class="show-form exit-form" href="javascript:void(0);">Return to map</button>
+  </div>
+
+</div>
