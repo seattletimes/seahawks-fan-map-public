@@ -11,35 +11,42 @@ nav.top {
   line-height: @top-height;
   border-bottom: 1px solid #CCC;
 
-  .logo {
-    height: @top-height - 18;
+  a.logo {
+    height: @top-height - 10;
     float: left;
-    margin: 10px 5px;
+    margin: 5px;
+
+    img {
+      max-width: 160px;
+    }
 
     @media @mobile {
-      margin: 12px 2px;
-      height: @top-height - 22;
     }
   }
-
-  ul.sponsor {
-    display: inline;
-    padding: 0;
+  .sponsorship {
+    height: @top-height;
+    float: left;
     font-family: @block;
     text-transform: uppercase;
-    vertical-align: top;
+    vertical-align: middle;
 
-    li {
-      display: inline-block;
-      font-size: @top-height - 22;
-      margin: 0 5px;
+    span.accent {
+      float: left;
+      margin-left: 5px;
 
       @media @mobile {
-        font-size: 11px;
+        display: none;
       }
+    }
 
-      a {
-        color: #444;
+    #adtopright {
+      display: inline-block;
+      float: left;
+      height: @top-height;
+      padding-top: 4px;
+
+      @media @small-mobile {
+        display: none;
       }
     }
   }
@@ -52,7 +59,7 @@ nav.top {
     line-height: 100%;
 
     @media @mobile {
-      right: 2px;
+      right: 0px;
     }
   }
 
@@ -60,9 +67,6 @@ nav.top {
     label {
       background: none;
       color: @black;     
-      @media @mobile {
-        font-size: 12px;
-      }
     }
   }
 

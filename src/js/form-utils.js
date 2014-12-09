@@ -1,3 +1,5 @@
+var $ = require("jquery");
+
 module.exports = {
   package: function(form) {
     var packet = {};

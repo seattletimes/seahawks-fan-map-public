@@ -12,12 +12,10 @@
   <body>
 
     <nav class="top">
-      <a href="http://seattletimes.com">
-        <img src="http://seattletimes.com/art/ui/seattletimeslogo_home.svg" class="logo">
+      <a href="http://seattletimes.com" class="logo">
+        <img src="http://seattletimes.com/art/ui/seattletimeslogo_home.svg">
       </a>
-      <ul class="sponsor">
-        <!--<li><a href="https://www.countryfinancial.com/">Sponsored by: <span class="accent">Country Financial</span></a></li>-->
-      </ul>
+      <div class="sponsorship"><span class="accent">Sponsored by</span> <%= t.include("partials/_adTop.html") %></div>
       <a class="share"></a>
     </nav>
 
